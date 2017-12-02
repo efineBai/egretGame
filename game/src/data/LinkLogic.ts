@@ -212,6 +212,17 @@ class LinkLogic {
 		return false;
 	}
 
-	
+	public static canMove(p1: number, p2:number): boolean {
+		if(p1 == p2) {
+			return false;
+		}
+		var p1x = GameData.elements[p1].location / GameData.maxColumn;
+		var p1y = GameData.elements[p1].location % GameData.maxColumn;
+
+		var p2x = GameData.elements[p2].location / GameData.maxColumn;
+		var p2y = GameData.elements[p2].location % GameData.maxColumn;
+
+		return p1x==p2x || p1y == p2y;
+	}
 
 }

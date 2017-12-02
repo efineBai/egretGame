@@ -40,7 +40,7 @@ class ElementView extends egret.Sprite {
     }
     private _focusMc: egret.MovieClip;
 
-    public set focus(val : boolean) {
+    public setFocus(val : boolean) {
         if(this._focus != val) {
             // 状态发生了改变
             if(!this._focusMc){
@@ -136,7 +136,7 @@ class ElementView extends egret.Sprite {
     }
 
     // 播放消除卡片到过关条件
-    public playCruveMove(tx: number, ty, number){
+    public playCruveMove(tx: number, ty: number){
          var tw: egret.Tween = egret.Tween.get(this);
         tw.to({x:tx,y:ty}, 300, egret.Ease.quartOut).call(this.overCurveMove, this);
     }
@@ -196,4 +196,6 @@ class ElementView extends egret.Sprite {
         var yy: number = startY + girdwidth*( Math.floor(this.location / GameData.maxColumn)) + girdwidth/ 2 + 5;
         return yy;
     }
+
+    
 }
