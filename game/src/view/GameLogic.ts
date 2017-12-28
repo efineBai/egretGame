@@ -104,7 +104,7 @@ class GameLogic {
 				var rel: boolean = false;
 				var next: boolean = true;
 				while(next) {
-					LinkLogic.chane
+					LinkLogic.
 				}
 			} 
 		}
