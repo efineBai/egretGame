@@ -104,9 +104,26 @@ class GameLogic {
 				var rel: boolean = false;
 				var next: boolean = true;
 				while(next) {
-					LinkLogic.
+					console.log("执行乱序")
+					LinkLogic.changeOrder();
+					if(LinkLogic.isNextHaveLine()) {
+						next = false;
+						rel = true;
+					}
+				}
+				if(rel) {
+					this.evm.updateOrder();
 				}
 			} 
+		}
+		this.isGameOver();
+	}
+
+	private gameoverpanel: GameOverPanel;
+	// 判断游戏是否结束
+	private isGameOver() {
+		if(!this.gameoverpannel) {
+
 		}
 	}
 

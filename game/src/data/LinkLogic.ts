@@ -225,4 +225,23 @@ class LinkLogic {
 		return p1x==p2x || p1y == p2y;
 	}
 
+	public static changeOrder(){
+		var arr: number[] = [];
+		for(var i=0; i< GameData.maxRow; i++) {
+			for(var j=0; j< GameData.maxColumn; j++) {
+				if(GameData.mapData[i][j] != -1) {
+					arr.push(GameData.mapData[i][j]);
+				}
+			}
+		}
+		var index: number = 0;
+		for(var i=0; i< GameData.maxRow; i++) {
+			for(var j=0; j< GameData.maxColumn; j++) {
+				index = Math.floor(Math.random() * arr.length);
+				GameData.mapData[i][j] = arr[index];
+				GameData.elements[arr[index]].location = i* GameData.maxColumn + j;
+				arr.slice(index, index+1);
+			}
+		}
+	}
 }
